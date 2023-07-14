@@ -1,26 +1,45 @@
 import { useEffect, useState } from "react";
-import { productsMock } from "../../../productsMock";
 import { useParams } from "react-router-dom";
 import "./itemListContainer.css";
 import { ItemListPresentacional } from "./ItemListPresentacional";
+import { db } from "../../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import "./itemListContainer.css";
+import { MoonLoader } from "react-spinners";
+import { FaClover } from "react-icons/fa6";
 
 export const ItemListContainer = () => {
   const [product, setProducts] = useState([]);
   const { categoria } = useParams();
 
   useEffect(() => {
-    const filtroProductos = productsMock.filter(
-      (elemento) => elemento.categoria === categoria
-    );
-    const productos = new Promise((resolve) => {
-      resolve(categoria ? filtroProductos : productsMock);
-    });
-    productos
-      .then((response) => {
-        setProducts(response);
+    let coleccion = collection(db, "products");
+    let consulta;
+    if (!categoria) {
+      consulta = coleccion;
+    } else {
+      consulta = query(coleccion, where("categoria", "==", categoria));
+    }
+    getDocs(consulta)
+      .then((res) => {
+        let products = res.docs.map((el) => {
+          return {
+            ...el.data(),
+            id: el.id,
+          };
+        });
+        setProducts(products);
       })
-      .catch((error) => console.log(error));
+      .catch((err) => console.log(err));
   }, [categoria]);
 
-  return <ItemListPresentacional productos={product} />;
+  return product.length === 0 ? (
+    <div className="d-flex justify-content-center flex-column charge align-items-center">
+      <FaClover size="8.9rem" className="text-success"/>
+      <h1 className="text-light mb-5">OffStore</h1>
+      <MoonLoader color="#FFFFFF" size={120} speedMultiplier={0.8} />
+    </div>
+  ) : (
+    <ItemListPresentacional productos={product} />
+  );
 };

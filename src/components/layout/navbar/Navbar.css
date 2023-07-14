@@ -1,10 +1,20 @@
+
 li{
    cursor: pointer;
 }
 .navb a{
    color: white;
    text-decoration: none;
+   border: solid white 2px;
 }
 .navb a:hover{
    color: green;
+}
+.navb .carrito:hover{
+  color: black ;
+
+}
+
+.title {
+   font-size: 60px;   
 }

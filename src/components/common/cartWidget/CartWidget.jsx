@@ -1,10 +1,14 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useContext } from "react";
+import { CartContext } from "../../../context/cartContext";
+
 
 export const CartWidget = () => {
+  const { cart } = useContext(CartContext)
   return (
     <div className="d-flex flex-row align-items-center">
-      <ShoppingCartIcon fontSize="large" color="action" />
-      <p className="fs-3 m-0">4</p>
+      <ShoppingCartIcon className="carrito" color="action" sx={{ fontSize : 55}}/>
+      <p className="fs-3 m-0 ">{cart.reduce((acum, el)=> acum + el.cantidad, 0)}</p>
     </div>
   );
 };

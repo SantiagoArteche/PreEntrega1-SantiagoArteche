@@ -1,13 +1,14 @@
 .containerTarjeta{
+    min-height: 710px !important;
     gap: 45px;
 }
 .tarjeta{
     width: 350px;
-    height: 405px;
+    height: 470px;
     gap: 10px;
 }
 .tarjeta img{
-    height: 220px;
+    height: 250px;
     width: 280px;
 }
 .details{

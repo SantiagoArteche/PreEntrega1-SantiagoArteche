@@ -1,1 +1,6 @@
-
+body{
+    background-color: black !important; 
+}
+.charge{
+    min-height: 680px;
+}
