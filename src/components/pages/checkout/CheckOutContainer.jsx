@@ -6,7 +6,7 @@ import {collection, addDoc} from "firebase/firestore"
 import { db } from "../../../firebaseConfig"
 import { useContext, useState } from "react"
 import { CartContext } from "../../../context/CartContext"
-import "./checkout.css"
+import './checkout.css'
 import { TextField, Button } from "@mui/material"
 import { Link } from "react-router-dom"
 

@@ -1,5 +1,5 @@
 import { ItemCount } from "../../common/itemCount/ItemCount";
-import "./itemDetail.css";
+import './itemDetail.css';
 
 
 export const ItemDetailPresentacional = ({ product, agregarProducto, notify, cantidad}) => {
