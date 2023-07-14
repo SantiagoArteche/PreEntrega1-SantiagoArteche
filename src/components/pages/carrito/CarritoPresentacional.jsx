@@ -25,7 +25,7 @@ return cart.length === 0 ? <div className="d-flex flex-column justify-content-ce
   title: "Estas por borrar este producto del carrito",
   text: "Estas seguro?",
   icon: "warning",
-  buttons: {cancel: "Cancelar", confirm:"Ok"},
+  buttons: {cancel: "Cancelar", confirm:"OK"},
   dangerMode: true,
 })
 .then((confirmed) => {

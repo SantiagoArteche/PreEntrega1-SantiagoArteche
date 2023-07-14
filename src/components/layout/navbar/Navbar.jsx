@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { CartWidget } from "../../common/cartWidget/CartWidget";
-import "./navbar.css";
+import "./navbar.css"
 import { FaClover } from "react-icons/fa6";
 
 export const Navbar = () => {

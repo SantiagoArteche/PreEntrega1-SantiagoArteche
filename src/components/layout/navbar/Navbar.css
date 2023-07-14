@@ -1,4 +1,3 @@
-
 li{
    cursor: pointer;
 }
@@ -11,10 +10,8 @@ li{
    color: green;
 }
 .navb .carrito:hover{
-  color: black ;
-
+   color: black ;
 }
-
 .title {
    font-size: 60px;   
 }
