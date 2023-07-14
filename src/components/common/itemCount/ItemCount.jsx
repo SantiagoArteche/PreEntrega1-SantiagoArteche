@@ -4,7 +4,7 @@ import { useCount } from '../../hooks/useCount';
 
 export const ItemCount = ({agregarProducto, notify, product, inicial = 1}) => {
   const { count, sumar, restar } = useCount(inicial, product.stock);
-  console.log(inicial);
+
   return (
         <>
         <div className="d-flex flex-row align-items-center">

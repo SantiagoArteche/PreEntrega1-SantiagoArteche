@@ -4,7 +4,7 @@ import { ItemDetailPresentacional } from "./ItemDetailPresentacional";
 import { db } from "../../../firebaseConfig";
 import { collection, getDoc, doc } from "firebase/firestore";
 import { MoonLoader } from "react-spinners";
-import { CartContext } from "../../../context/cartContext";
+import { CartContext } from "../../../context/CartContext";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaClover } from "react-icons/fa6";
@@ -37,7 +37,7 @@ export const ItemDetailContainer = () => {
 }
 
 const cantidad = obtenerCantidad(id)
-console.log(cantidad);
+
 
   useEffect(() => {
     let coleccion = collection(db, "products");
