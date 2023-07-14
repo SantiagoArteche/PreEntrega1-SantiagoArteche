@@ -1,5 +1,5 @@
 import { CarritoContainer } from "./components/pages/carrito/CarritoContainer"
-import { CheckOutPresentacional } from "./components/pages/checkout/CheckOutPresentacional"
+import { CheckoutContainer } from "./components/pages/checkout/CheckoutContainer"
 import { ItemDetailContainer } from "./components/pages/itemDetail/ItemDetailContainer"
 import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer"
 
@@ -26,6 +26,6 @@ export const rutas = [{
 },{
     id: "checkout",
     path: "/checkout",
-    Element: CheckOutPresentacional
+    Element: CheckoutContainer
 },
 ]
