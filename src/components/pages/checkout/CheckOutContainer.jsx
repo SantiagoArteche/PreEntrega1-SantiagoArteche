@@ -10,11 +10,7 @@ import "./checkout.css"
 import { TextField, Button } from "@mui/material"
 import { Link } from "react-router-dom"
 
-
-
-
-
-export const CheckoutContainer = () => {
+export const CheckOutContainer = () => {
 
   const {cart, precioTotal, limpiarCarrito} = useContext( CartContext )
   const [ordenId, setOrdenId] = useState(null)
@@ -48,9 +44,6 @@ export const CheckoutContainer = () => {
     })
   })
  
-
-
-
   return (
     <>
       {ordenId ?  
